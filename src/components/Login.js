@@ -21,9 +21,9 @@ function SignUp(props) {
   }
 
   return(
-    <>
-      <div className="login">
-        <h2 className="login__heading">Вход</h2>
+    <div className="login">
+      <h2 className="login__heading">Вход</h2>
+      <form onSubmit={handleSubmit}>
         <fieldset className="login__input-container">
           <input 
             className="login__input"
@@ -47,13 +47,12 @@ function SignUp(props) {
         <div className="login__button-container">
           <button 
             className="button button_action_auth"
-            onClick={handleSubmit}
           >
             Войти
           </button>
         </div>
-      </div>
-    </>
+      </form>
+    </div>
   );
 };
 

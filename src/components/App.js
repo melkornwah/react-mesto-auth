@@ -12,11 +12,11 @@ import InfoTooltip from "./InfoTooltip";
 import success from "../images/success.png";
 import failure from "../images/failure.png";
 import api from "../utils/api";
-import { currentUser } from "../contexts/CurrentUserContext";
+import { CurrentUserContext} from "../contexts/CurrentUserContext";
 import SignUp from "./Register";
 import SignIn from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
-import { register, authorize, authenticate } from "./AuthMesto";
+import { register, authorize, authenticate } from "../utils/authMesto";
 
 
 function App() {  
@@ -237,7 +237,7 @@ function App() {
   }, []);
 
   return (
-    <currentUser.Provider value={user}>
+    <CurrentUserContext.Provider value={user}>
       <div className="App">
         <div className="page">
           <Header 
@@ -312,7 +312,7 @@ function App() {
           />
         </div>
       </div>
-    </currentUser.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 
